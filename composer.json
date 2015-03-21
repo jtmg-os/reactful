@@ -6,12 +6,12 @@
     "license": "MIT",
     "require": {
         "php": ">=5.4.0",
-        "react/http": ">0.4.0"
+        "react/http": ">=0.3.0"
     },
     "autoload": {
         "psr-0": { "react\\reactful": "" }
     },
-    "target-dir": "react/reactful",
+    
     "extra": {
         "branch-alias": {
             "dev-master": "master"
