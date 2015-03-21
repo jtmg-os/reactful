@@ -7,13 +7,14 @@ class init
 //@TODO: debug flag to be introduced and debug silencer added
     protected $models = 'apps';
     protected $view = null;
-    protected $request, $response;
+    protected $request, $response,$payload;
 
-    public function __construct($request, $response)
+    public function __construct($request, $response,$payload)
     {
 
         $this->request = $request;
         $this->response = $response;
+        $this->payload = $payload;
         $this->render();
     }
 
@@ -67,9 +68,9 @@ class init
             case 'GET':
                 return $class->read();
             case 'POST';
-                return $class->create();
+                return $class->create($this->payload);
             case 'PUT':
-                return $class->update();
+                return $class->update($this->payload);
             case 'DELETE';
                 return $class->delete();
             case 'OPTIONS':
