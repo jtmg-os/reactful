@@ -21,3 +21,8 @@ most important ones
 2. Implementing 100% RESTfull
 3. Introducing fully async calls + MySQL lock handling
 
+# Use
+This is vendor package, to be placed in vendor/react/reactful
+bin/rf.php can be used to generate project template
+demo module and auth + registration modules are soon to join to show usage
+
