@@ -11,7 +11,7 @@
     "autoload": {
         "psr-0": { "react\\reactful": "" }
     },
-    "target-dir": "react/reactful",
+    
     "extra": {
         "branch-alias": {
             "dev-master": "master"
