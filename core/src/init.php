@@ -4,7 +4,7 @@ namespace core;
 
 class init
 {
-
+//@TODO: debug flag to be introduced and debug silencer added
     protected $models = 'apps';
     protected $view = null;
     protected $request, $response;
@@ -23,7 +23,7 @@ class init
         $route = $this->route();
         try {
             $model = $route[$this->request->getPath()];
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return $this->view = $this->handleError('500', $e->getMessage());
         }
 
@@ -32,14 +32,14 @@ class init
         }
         try {
             require_once $this->models . DIRECTORY_SEPARATOR . $model['namespace'] . DIRECTORY_SEPARATOR .'src'. DIRECTORY_SEPARATOR . $model['file'];
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return $this->view = $this->handleError('404', $e->getMessage());
         }
         try {
             $className = $model['namespace'] . '\\' . $model['class'];
             $class = new $className();
             return $this->view = $this->methodMapper($class);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return $this->view = $this->handleError('500', $e->getMessage());
         }
         return $class;
@@ -77,6 +77,7 @@ class init
             default:
                 return $this->handleError('405', 'method not allowed');
         }
+        return;
     }
 
     private function render()

@@ -10,7 +10,7 @@ namespace core;
 
 
 class db {
-
+//@TODO this is to be moved to config folder of the app
 protected $user = 'root';
 protected $password = 'root';
 protected $db = 'ca';
