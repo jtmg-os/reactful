@@ -1,7 +1,7 @@
 <?php
 
-require 'vendor/autoload.php';
-require 'vendor/react/reactful/core/src/init.php';
+require '../../vendor/autoload.php';
+require '../src/init.php';
 
 
 $app = function ($request, $response) {
